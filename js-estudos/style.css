@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    height: 96vh;
+}
+
+main{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    padding: 60px;
+    width: max-content;
+    
+    border: 5px solid ;
+    border-image-source: linear-gradient(to right, #3D1FE0,#BD26E0,#7C1FE0,#1F40E0,#E017AF);
+    border-image-slice: 1;
+    border-radius: 20px;
+    
+
+}
+h1{
+    padding: 20px;
+    text-align: center;
+}
+.senha{
+   margin-bottom: 20px;
+    display: flex;
+}
