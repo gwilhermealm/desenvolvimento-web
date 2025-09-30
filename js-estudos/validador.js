@@ -26,10 +26,27 @@ function validar(senha) {
     return temCaractere && temLetraMaiuscula && temNumero
 }
 
+function validarsenha(){
+ let senhaUsuario = document.getElementById("suasenha").value;
+ let resultado = document.getElementById("res");
+ let r1 = document.getElementById("r1");
+ let r2 = document.getElementById("r2");
+ let r3 = document.getElementById("r3");
+ let r4 = document.getElementById("r4");
 
-const senhaParaTestar = "Minh1n@";
-if (validar(senhaParaTestar)) {
-    console.log("Senha válida!");
-} else {
-    console.log("Senha inválida! senha deve conter no mínimo 8 caracteres, uma letra maiúscula, um número e um caractere especial.");
+ 
+ if (validar(senhaUsuario)) {
+     resultado.style.color = "green";
+     resultado.innerHTML = "Senha válida!";
+     
+ } else if (validar(senhaUsuario) === false){
+     resultado.style.color = "red";
+     resultado.innerHTML = "Senha inválida! ";
+      
+ }
+      r1.style.color = senhaUsuario.length <= 8 ? "green" : "red";
+      r2.style.color = /[A-Z]/.test(senhaUsuario) ? "green" : "red";
+      r3.style.color = /[0-9]/.test(senhaUsuario) ? "green" : "red";
+      r4.style.color = /[!@#%&$]/.test(senhaUsuario) ? "green" : "red";
+
 }
