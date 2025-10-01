@@ -44,7 +44,7 @@ function validarsenha(){
      resultado.innerHTML = "Senha inválida! ";
       
  }
-      r1.style.color = senhaUsuario.length <= 8 ? "red" : "green";
+      r1.style.color = senhaUsuario.length <= 8 ? "red" : "green";-
       r2.style.color = /[A-Z]/.test(senhaUsuario) ? "green" : "red";
       r3.style.color = /[0-9]/.test(senhaUsuario) ? "green" : "red";
       r4.style.color = /[!@#%&$]/.test(senhaUsuario) ? "green" : "red";
