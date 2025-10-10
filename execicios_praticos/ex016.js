@@ -4,7 +4,7 @@
   function  geradorSaudacao(saudacaoinicial){
       
     
-    return function saudar (nome){
+    return function saudar (nome = "visitante"){
 
         return saudacaoinicial + nome
 
@@ -12,4 +12,4 @@
 }
 const saudacao = geradorSaudacao("ola,")
 
-console.log(saudacao("alice"))
+console.log(saudacao())
