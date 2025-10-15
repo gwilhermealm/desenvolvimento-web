@@ -1,0 +1,7 @@
+{
+    "dados":[
+        {"nome":"guilherme", "idade": 22},
+        {"nome":"joao", "idade": 18},
+        {"nome":"maria", "idade": 16}
+    ]
+}
