@@ -4,10 +4,11 @@ async function nomes(id) {
     throw new Error(`Erro na API: ${resposta.status} ${resposta.statusText}`);
   }
   const dados = await resposta.json()
-  return dados;
+  return dados[0].nome.abreviado
 }
 
-nomes("invalido").then(apiOk => {
+
+nomes("br").then(apiOk => {
   console.log(apiOk)
 })
 .catch(apiErro => {
