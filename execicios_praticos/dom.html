@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulaçao de DOM</title>
+</head>
+<body>
+    <h1>senha no console</h1>
+    <p>com dois eventos ao clicar 1 e 2 vezes</p>
+    <label for="nome">nome</label>
+    <input type="text" id="nome">
+    <label for="senha">senha:</label>
+    <input type="text" id="senha">
+    <button id="botao">entrar</button>
+
+    <script>
+
+
+      
+       
+            let nome = document.getElementById('nome')
+            let senha = document.getElementById('senha')
+            let button = document.getElementById('botao')
+          
+          
+            
+            
+        //manipulando o numeros de clicks
+        let click = 0;
+
+        button.addEventListener("click", () => {
+            click++;
+            let valorNome = nome.value;
+            let valorSenha = senha.value;
+            console.log(`usuario:${valorNome}\nsenha:${valorSenha}`);
+            if (click === 2) {
+                alert("senha ja cadastrada no console");
+            } else if(click === 3){
+                location.reload()
+                
+            }
+        });
+        
+
+
+    </script>
