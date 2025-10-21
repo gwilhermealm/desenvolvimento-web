@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulaçao de DOM</title>
+</head>
+<body>
+    <h1>senha no console</h1>
+    <label for="nome">nome</label>
+    <input type="text" id="nome">
+    <label for="senha">senha:</label>
+    <input type="text" id="senha">
+    <button onclick="logar()">entrar</button>
+
+    <script>
+
+
+        function logar() {
+       
+            let valorNome = document.getElementById('nome').value;
+            let valorSenha = document.getElementById('senha').value;
+            
+            console.log(`usuario:${valorNome}\nsenha:${valorSenha}`);
+        }
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
