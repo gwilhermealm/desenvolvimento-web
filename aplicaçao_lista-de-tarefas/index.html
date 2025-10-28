@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de tarefas</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    main{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        border: 2px solid grey;
+        padding: 20px;
+    }
+    h2{
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    ol{
+        margin-top: 20px;
+    }
+    li{
+        margin-top: 10px;
+    }
+    #adc{
+        background-color: green;
+        border: 1px;
+        padding: 2px;
+
+    }
+    .editar{
+        background-color: rgb(41, 116, 255);
+        border: none;
+    }
+    .concluir{
+        background-color: green;
+        border: none ;
+
+    }
+    .apagar{
+        background-color: red;
+        border: none;
+    }
+    button{
+        margin-left: 5px;
+        padding: 3px;
+        border-radius: 4px;
+    }
+
+
+  </style>
+</head>
+<body>
+    <main>
+        <h2>Minhas tarefas</h2>
+        <input type="text" id="inputtext" placeholder="digite sua proxima tarefa">
+        <button id="adc">adicionar</button>
+        <button id="limpar" class="limpar">limpar</button>
+        <ol id="lista-tarefas">
+            <li id="li1">cafe da manha <button id="btnedit" class="editar">editar</button> <button id="btnconcluir" class=" concluir">concluir
+            </button><button id="btnapagar" class="apagar">apagar</button></li>
+
+            <li>ir ao trabalho <button class="editar">editar</button><button class="concluir">concluir</button><button class="apagar">apagar</button></li>
+
+            <li>almoçar <button class="editar">editar</button><button class="concluir">concluir</button><button class="apagar">apagar</button></li>
+
+            <li>estudar <button class="editar">editar</button><button class="concluir">concluir</button><button class="apagar">apagar</button></li>
+        </ol>
+
+
+    </main>
+   <script src="script.js"></script>
+</body>
+</html>
