@@ -27,21 +27,24 @@
             
             
         //manipulando o numeros de clicks
-        let click = 0;
-
+        let click = 0
         button.addEventListener("click", () => {
             click++;
             let valorNome = nome.value;
             let valorSenha = senha.value;
             console.log(`usuario:${valorNome}\nsenha:${valorSenha}`);
-            if (click === 2) {
-                alert("senha ja cadastrada no console");
-            } else if(click === 3){
-                location.reload()
-                
-            }
-        });
+            
+        })
         
+        botao.addEventListener("click", ()=>{
+            
+           
+           if (click===3){
+             console.log(`usuario cadastrado`);
+           }
+           
+
+        })
 
 
     </script>
