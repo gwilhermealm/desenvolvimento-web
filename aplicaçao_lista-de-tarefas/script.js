@@ -1,32 +1,62 @@
 
 
-const btneditar = document.getElementById('btnedit');
 const lista = document.getElementById('lista-tarefas');
-const li_text = document.getElementById('li1');
-const btnapg = document.getElementById('btnapagar');
-const btnconcluir = document.getElementById('btnconcluir')
+const textinput = document.getElementById('inputtext');
+const btnadicionar = document.getElementById('adc');
 const btnlimpar = document.getElementById('limpar')
-const textinput = document.getElementById('inputtext')
-const btnadicionar = document.getElementById('adc')
+
+// Adicionando nova tarefa
+btnadicionar.addEventListener("click", () => {
+    let novatarefa = textinput.value;
+    let li_nova = document.createElement('li');
+    li_nova.textContent = novatarefa;
+    lista.appendChild(li_nova);
+    textinput.value = "";
+    //botoes da nova tarefa
+
+    //botao editar
+    let btneditar = document.createElement('button')
+    btneditar.classList.add("editar")
+    btneditar.textContent ="editar"
+    li_nova.appendChild(btneditar)
+
+    //botao concluir
+    let btnconcluir = document.createElement('button')
+    btnconcluir.textContent = "concluir"
+    li_nova.appendChild(btnconcluir)
+    btnconcluir.classList.add("concluir")
+
+    //bota apagar
+    let btnapagar = document.createElement('button')
+    btnapagar.classList.add("apagar")
+    btnapagar.textContent = "apagar"
+    li_nova.appendChild(btnapagar)
 
 
-//editar tarefa
+    //eventos dos botoes
+    //editar
+    btneditar.addEventListener("click", () => {
+     let novoTexto = prompt("Editar tarefa:", li_nova.firstChild.textContent);
+     li_nova.firstChild.textContent = novoTexto;
 
-btneditar.addEventListener("click",()=>{
-    li_text.textContent="nova tarefa"
+   
+    })
+    //concluir
+    btnconcluir.addEventListener("click", () => {
+   
+    li_nova.style.color = "green";
 })
-//removendo tarefa
-btnapg.addEventListener("click",()=>{
-    lista.removeChild(li_text)
+
+   // botao apagar
+   btnapagar.addEventListener("click", () => {
+    lista.removeChild(li_nova);
 })
-// concluindo tarefa
-btnconcluir.addEventListener("click",()=>{
-    li_text.style.color="green";
+        
 })
-//adicionando nova tarefa
-btnadicionar.addEventListener("click",()=>{
-    let novatarefa = textinput.value
-    let li_nova = document.createElement('li')
-    li_nova.textContent = novatarefa
-    lista.appendChild(li_nova)
-})
+
+
+
+// Limpar lista
+btnlimpar.addEventListener("click", () => {
+    lista.innerHTML = "";
+});
