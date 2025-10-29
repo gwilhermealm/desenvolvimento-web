@@ -16,7 +16,7 @@ btnadicionar.addEventListener("click", () => {
 
     //botao editar
     let btneditar = document.createElement('button')
-    btneditar.classList.add("editar")
+    btneditar.classList.add("editar")//adiciona classe ao botao
     btneditar.textContent ="editar"
     li_nova.appendChild(btneditar)
 
@@ -24,26 +24,39 @@ btnadicionar.addEventListener("click", () => {
     let btnconcluir = document.createElement('button')
     btnconcluir.textContent = "concluir"
     li_nova.appendChild(btnconcluir)
-    btnconcluir.classList.add("concluir")
+    btnconcluir.classList.add("concluir")//adiciona classe ao botao
 
     //bota apagar
     let btnapagar = document.createElement('button')
-    btnapagar.classList.add("apagar")
+    btnapagar.classList.add("apagar")//adiciona classe ao botao
     btnapagar.textContent = "apagar"
     li_nova.appendChild(btnapagar)
+
+    //botoes mudar ordem das tarefas 
+    //botao subir
+    let btnsubir = document.createElement('button')
+    btnsubir.textContent='👆'
+    li_nova.appendChild(btnsubir)
+    btnsubir.classList.add("subir")//adiciona classe ao botao
+    //botao descer
+    let btndescer = document.createElement('button')
+    btndescer.textContent='👇'
+    li_nova.appendChild(btndescer)
+    btndescer.classList.add("descer")//adiciona classe ao botao
+
 
 
     //eventos dos botoes
     //editar
     btneditar.addEventListener("click", () => {
-     let novoTexto = prompt("Editar tarefa:", li_nova.firstChild.textContent);
+     
+     let novoTexto = prompt("Editar tarefa:");
      li_nova.firstChild.textContent = novoTexto;
 
    
     })
     //concluir
     btnconcluir.addEventListener("click", () => {
-   
     li_nova.style.color = "green";
 })
 
@@ -51,6 +64,18 @@ btnadicionar.addEventListener("click", () => {
    btnapagar.addEventListener("click", () => {
     lista.removeChild(li_nova);
 })
+  //botao subir
+  btnsubir.addEventListener("click", ()=>{
+      if (li_nova.previousElementSibling) {
+            lista.insertBefore(li_nova, li_nova.previousElementSibling);
+        }
+  })
+  //botao descer
+   btndescer.addEventListener("click", () => {
+        if (li_nova.nextElementSibling) {
+            lista.insertBefore(li_nova.nextElementSibling, li_nova);
+        }
+    })
         
 })
 
